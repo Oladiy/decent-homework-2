@@ -34,7 +34,6 @@ private:
 
 Trinket::Trinket(const Trinket& trinket) {
     this->_dsa = trinket._dsa;
-    DSA_free(_dsa);
 }
 
 DSA *Trinket::get_dsa() const {
@@ -95,7 +94,6 @@ bool Car::verify_signature(DSA_SIG* signed_data, const unsigned char* data, DSA*
 
 Car::Car(const Car &car) {
     this->_dsa = car._dsa;
-    DSA_free(_dsa);
 }
 
 DSA* Car::get_dsa() const {
